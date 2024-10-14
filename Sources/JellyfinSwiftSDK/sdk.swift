@@ -37,6 +37,14 @@ public struct ClientConfiguration: Sendable {
     public let device: String
     public let deviceId: String
     public let version: String
+    
+    public init(serverURL: URL, client: String, device: String, deviceId: String, version: String) {
+        self.serverURL = serverURL
+        self.client = client
+        self.device = device
+        self.deviceId = deviceId
+        self.version = version
+    }
 }
 
 struct AuthMiddleware: ClientMiddleware {

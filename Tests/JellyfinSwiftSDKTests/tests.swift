@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-@testable import JellyfinSwiftSDK
+import JellyfinSwiftSDK
 
 @Test func authorizeAndCallAPI() async throws {
     let sdk = JellyFinSDK.init(configuration: .init(
