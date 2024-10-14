@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "JellyfinSwiftSDK",
-            targets: ["jellyfin-swift-sdk"]),
+            targets: ["JellyfinSwiftSDK"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-openapi-generator", from: "1.0.0"),
@@ -21,7 +21,7 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "jellyfin-swift-sdk",
+            name: "JellyfinSwiftSDK",
             dependencies: [
                 .product(name: "OpenAPIRuntime", package: "swift-openapi-runtime"),
                 .product(name: "OpenAPIURLSession", package: "swift-openapi-urlsession"),
@@ -31,9 +31,9 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "jellyfin-swift-sdk-tests",
+            name: "JellyfinSwiftSDKTests",
             dependencies: [
-                "jellyfin-swift-sdk"
+                "JellyfinSwiftSDK"
             ]
         ),
     ]
