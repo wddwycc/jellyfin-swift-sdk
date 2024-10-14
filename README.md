@@ -7,6 +7,8 @@ Jellyfin Swift SDK based on `apple/swift-openapi-generator` and `apple/swift-ope
 Initialize and authroize the client: 
 
 ```swift
+import JellyfinSwiftSDK
+
 let sdk = JellyFinSDK.init(configuration: .init(
     serverURL: URL.init(string: "<server-url>")!,
     client: "<client>",
