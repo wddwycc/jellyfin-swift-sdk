@@ -32,11 +32,11 @@ public class JellyFinSDK {
 }
 
 public struct ClientConfiguration: Sendable {
-    let serverURL: URL
-    let client: String
-    let device: String
-    let deviceId: String
-    let version: String
+    public let serverURL: URL
+    public let client: String
+    public let device: String
+    public let deviceId: String
+    public let version: String
 }
 
 struct AuthMiddleware: ClientMiddleware {
@@ -68,10 +68,10 @@ struct AuthMiddleware: ClientMiddleware {
 
 // The reason why this exists: https://github.com/apple/swift-openapi-generator/issues/84
 struct CustomDateTranscoder: DateTranscoder {
-    public func encode(_ date: Date) throws -> String { ISO8601DateFormatter().string(from: date) }
+    func encode(_ date: Date) throws -> String { ISO8601DateFormatter().string(from: date) }
 
     // Example: 2024-10-14T01:48:04.5140668Z
-    public func decode(_ dateString: String) throws -> Date {
+    func decode(_ dateString: String) throws -> Date {
         let iso8601DateFormatter = ISO8601DateFormatter()
         iso8601DateFormatter.formatOptions = [.withFractionalSeconds]
         guard let date = iso8601DateFormatter.date(from: dateString) else {
